@@ -74,14 +74,14 @@ async def info(event):
   await event.reply("**Merhaba Benim Ve Sahibim Hakkında Bilgi\n\nPython: 3.8.2\nKütüphanem: Telethon\n\nSahibim:  Gruplarınızda Üyeleri Etiketlemek için Yaratılmışım**",
                     buttons=(
                       [
-                       Button.url('Beni Grubuna Ekle ➕', 'https://t.me/Startaggerbot?startgroup=a')
+                       Button.url('Beni Grubuna Ekle ➕', 'https://telegram.me/UyeEtiketleyiciBot?startgroup=true')
                       ],
                       [
-                       Button.url('📢 Kanal', 'https://t.me/StarBotKanal'),
-                       Button.url('🇹🇷 Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('📢 Kanal', 'https://t.me/+xOXlvCLCUPw1YjY0'),
+                       Button.url('🇹🇷 Sahibim', 'https://t.me/QNikola')
                       ],
                       [
-                       Button.url('🧑🏻‍💻 ɢɪᴛʜᴜʙ ᴋᴀʏɴᴀᴋ ᴋᴏᴅᴜ 🧑🏻‍💻', 'https://github.com/MehmetAtes21/Tagger')
+                       Button.url('', '')
                       ],
                     ),
                     link_preview=False
@@ -106,11 +106,11 @@ async def start(event):
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
+                       Button.url('Beni Grubuna Ekle', 'https://telegram.me/UyeEtiketleyiciBot?startgroup=true'),
+                       Button.url('Kanal', 'https://t.me/+xOXlvCLCUPw1YjY0')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('Sahibim', 'https://t.me/QNikola')
                       ],
                     ),
                     link_preview=False)
@@ -124,16 +124,16 @@ async def start(event):
 async def handler(event):
     async for usr in client.iter_participants(event.chat_id):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
-     await event.edit(f"**Merhaba Ben @MinaTagBot\nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
+     await event.edit(f"**Merhaba Ben @UyeEtiketleyiciBot\nGrubunuzdakı Üyeleri Etiketleye Bilirim\nKomutlar için Komutlar Düğmesine Tıklaya Bilirsiz**", buttons=(
                       [
                        Button.inline("Komutlar", data="komutlar")
                       ],
                       [
-                       Button.url('Beni Grubuna Ekle', 'https://t.me/StartaggerBot?startgroup=a'),
-                       Button.url('Kanal', 'https://t.me/StarBotKanal')
+                       Button.url('Beni Grubuna Ekle 💜', 'https://telegram.me/UyeEtiketleyiciBot?startgroup=true'),
+                       Button.url('Kanal 🌟', 'https://t.me/+xOXlvCLCUPw1YjY0')
                       ],
                       [
-                       Button.url('Sahibim', 'https://t.me/Hayiboo')
+                       Button.url('Sahibim 👩‍💻', 'https://t.me/QNikola')
                       ],
                     ),
                     link_preview=False)
@@ -163,13 +163,13 @@ async def mentionall(event):
   global anlik_calisan
   rxyzdev_tagTot[event.chat_id] = 0
   if event.is_private:
-    return await event.respond("**Bu Komut Sadace Grublarda ve Kanallarda Kullanıma Bilir**")
+    return await event.respond("**Bu komut sadace grublarda ve kanallarda kullanıla bilir**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
     admins.append(admin.id)
   if not event.sender_id in admins:
-    return await event.respond("**Yalnızca Yöneticiler Etiket işlemini Yapabilir**")
+    return await event.respond("**Yalnızca Yöneticiler Etiket işlemini Yapabilir🤺**")
   
   if event.pattern_match.group(1):
     mode = "text_on_cmd"
@@ -231,7 +231,7 @@ async def mentionall(event):
 async def mentionalladmin(event):
   global anlik_calisan
   if event.is_private:
-    return await event.respond("**Bu Komut Yalnızca Grublarda Ve Kanallarda Kullanıma Bilir!**")
+    return await event.respond("**Bu komut yalnızca grublarda ve kanallarda kullanıla bilir!**")
   
   admins = []
   async for admin in client.iter_participants(event.chat_id):
@@ -262,7 +262,7 @@ async def mentionalladmin(event):
       usrnum += 1
       usrtxt += f"\n**👤 - [{usr.first_name}](tg://user?id={usr.id}) **"
       if event.chat_id not in anlik_calisan:
-        await event.respond("**Etiket İşlemi Bitti.!**")
+        await event.respond("**Etiket İşlemi Bitti.🔥**")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, f"{msg}\n\n{usrtxt}")
@@ -280,7 +280,7 @@ async def mentionalladmin(event):
       usrnum += 1
       usrtxt += f"\n**👤 - [{usr.first_name}](tg://user?id={usr.id}) **"
       if event.chat_id not in anlik_calisan:
-        await event.respond("**İşlem Durduruldu.!**")
+        await event.respond("**İşlem Durduruldu.❗**")
         return
       if usrnum == 5:
         await client.send_message(event.chat_id, usrtxt, reply_to=msg)
@@ -290,7 +290,7 @@ async def mentionalladmin(event):
 
     sender = await event.get_sender()
     rxyzdev_initT = f"[{sender.first_name}](tg://user?id={sender.id})"
-    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**Etiket İşlemi Başarıyla Tamamlandı !.\n\n**Etiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}")
+    if event.chat_id in rxyzdev_tagTot:await event.respond(f"**Etiket İşlemi Başarıyla Tamamlandı ✅.\n\n**Etiketlerin Sayları: {rxyzdev_tagTot[event.chat_id]}\n\nEtiket İşlemini Başlatan: {rxyzdev_initT}")
 
 
 
@@ -702,5 +702,5 @@ class LAN(object):
         TOTAL_BLOCK = "🚷 **Ümumi əngəllənən:** `{}`\n\n{}"
 
 app.run()
-print(">> Bot çalışıyor @Hayiboo Tarafından Kuruldu<<")
+print(">> Bot çalışıyor @QNikola Tarafından Kuruldu<<")
 client.run_until_disconnected()
