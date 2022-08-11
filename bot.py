@@ -133,7 +133,7 @@ async def handler(event):
                        Button.url('Kanal 🌟', 'https://t.me/+xOXlvCLCUPw1YjY0')
                       ],
                       [
-                       Button.url('Sahibim 👩‍💻', 'https://t.me/QNikola')
+                       Button.url('Sahibim 🌹', 'https://t.me/QNikola')
                       ],
                     ),
                     link_preview=False)
